@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Sacaa Tersayang 🌸💖</title>
+  <!-- Google Font Lucu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Mali:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Mali', cursive;
+    }
+
+    body {
+      background: #ffe5ec;
+      background-image: 
+        radial-gradient(#ffb3c6 1.5px, transparent 1.5px),
+        radial-gradient(#ffccd5 1.5px, #ffe5ec 1.5px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 14px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Efek stiker melayang di background */
+    .floating-sticker {
+      position: fixed;
+      bottom: -40px;
+      user-select: none;
+      pointer-events: none;
+      animation: floatUp linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.8; }
+      100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* Efek hati saat klik/sentuh layar */
+    .click-heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 24px;
+      animation: popOut 0.8s ease-out forwards;
+      z-index: 9999;
+    }
+
+    @keyframes popOut {
+      0% { transform: scale(0.5) translateY(0); opacity: 1; }
+      100% { transform: scale(1.5) translateY(-40px); opacity: 0; }
+    }
+
+    /* Kartu Utama */
+    .card {
+      background: #fffdfa;
+      max-width: 440px;
+      width: 100%;
+      border-radius: 30px;
+      padding: 24px 20px;
+      box-shadow: 0 16px 36px rgba(255, 143, 171, 0.35);
+      border: 4px dashed #ffb3c6;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: #ff758f;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 10px rgba(255, 117, 143, 0.3);
+    }
+
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      color: #c9184a;
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Bingkai Polaroid Foto */
+    .polaroid {
+      background: white;
+      padding: 12px 12px 18px 12px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      border: 2px solid #ffccd5;
+      transform: rotate(-1deg);
+      transition: transform 0.3s ease;
+      margin: 0 auto 16px auto;
+    }
+
+    .polaroid:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .polaroid-caption {
+      margin-top: 8px;
+      font-weight: 700;
+      color: #ff4d6d;
+      font-size: 1.05rem;
+    }
+
+    /* Kotak Catatan Romantis */
+    .love-letter {
+      background: #fff0f3;
+      border-radius: 18px;
+      padding: 14px 16px;
+      border: 2px solid #ffccd5;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .love-letter-title {
+      font-weight: 700;
+      color: #a4133c;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .letter-content {
+      font-size: 0.92rem;
+      color: #4a4e69;
+      line-height: 1.5;
+      font-style: italic;
+      min-height: 48px;
+    }
+
+    /* Pemutar Musik */
+    .audio-player {
+      background: #ffe5ec;
+      padding: 10px 14px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    audio {
+      width: 100%;
+      height: 36px;
+    }
+
+    /* Penggeser Sayang */
+    .love-meter {
+      background: #fff;
+      padding: 14px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      border: 2px solid #ffccd5;
+    }
+
+    .love-meter label {
+      font-weight: 700;
+      color: #590d22;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .slider {
+      width: 100%;
+      accent-color: #ff4d6d;
+      cursor: pointer;
+    }
+
+    .percent-display {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ff4d6d;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .meter-note {
+      font-size: 0.88rem;
+      color: #800f2f;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* Kolom Input Pesan */
+    .message-box {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .message-box label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #590d22;
+      font-weight: 700;
+    }
+
+    textarea {
+      width: 100%;
+      height: 85px;
+      border: 2px solid #ffccd5;
+      border-radius: 14px;
+      padding: 10px;
+      font-size: 0.95rem;
+      resize: none;
+      outline: none;
+      background: #fff;
+    }
+
+    textarea:focus {
+      border-color: #ff4d6d;
+    }
+
+    /* Tombol WhatsApp */
+    .btn-send {
+      width: 100%;
+      background: #25d366;
+      color: white;
+      border: none;
+      padding: 13px;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 5px 14px rgba(37, 211, 102, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-send:hover {
+      transform: translateY(-2px);
+      background: #1ebc57;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="badge-top">Special for My Favorite Person 🌷</div>
+    <h1>Hai Zia Manis! ✨</h1>
+
+    <!-- 1. Foto Pasangan -->
+    <div class="polaroid">
+      <img src="foto_ziaa.jpg" alt="Foto Pasangan">
+      <div class="polaroid-caption">Aku Sayang Kamu! 🤍🧸</div>
+    </div>
+
+    <!-- 2. Kotak Catatan Kata-Kata -->
+    <div class="love-letter">
+      <div class="love-letter-title">💌 Catatan Kecil Buat Kamu:</div>
+      <div class="letter-content" id="myMessageText"></div>
+    </div>
+
+    <!-- 3. Pemutar Lagu -->
+    <div class="audio-player">
+      <audio controls>
+        <source src="tulus_interaksi.mp3" type="audio/mpeg">
+        Browser tidak mendukung audio.
+      </audio>
+    </div>
+
+    <!-- 4. Penggeser Persen Sayang -->
+    <div class="love-meter">
+      <label for="loveRange">Berapa persen sayang kamu hari ini? 🍓</label>
+      <input type="range" id="loveRange" class="slider" min="1" max="100" value="100" oninput="updateLoveMeter(this.value)">
+      <div>
+        <span class="percent-display" id="percentText">100%</span>
+      </div>
+      <div class="meter-note" id="meterNote">Sayang banget tanpa batas! 💖✨</div>
+    </div>
+
+    <!-- 5. Pesan Khusus & WhatsApp -->
+    <div class="message-box">
+      <label for="secretMessage">Tulis pesan balasan untuk aku: ✏️</label>
+      <textarea id="secretMessage" placeholder="Tulis sesuatu yang manis di sini..."></textarea>
+    </div>
+
+    <button class="btn-send" onclick="sendToWhatsApp()">
+      Kirim Balasan ke WhatsApp 💬
+    </button>
+  </div>
+
+  <script>
+    // ==============================================================
+    // PENGATURAN UTAMA (GANTI DUA BARIS DI BAWAH INI SAJA)
+    // ==============================================================
+    
+    // 1. Masukkan nomor WhatsApp kamu (awali 628, jangan pakai 08)
+    const nomorWhatsApp = "6283185099381"; 
+
+    // 2. Masukkan kata-kata romantis yang ingin kamu sampaikan
+    const kataKataKamu = "Terima kasih sudah menjadi partner untuk ketawa karena hal-hal yang bahkan nggak pantas ditertawakan. balon malam tu caa 😭😂  ";
+
+    // ==============================================================
+    // LOGIKA PROGRAM (TIDAK PERLU DIUBAH LAGI)
+    // ==============================================================
+
+    // Animasi mengetik otomatis
+    let charIndex = 0;
+    function typeEffect() {
+      const target = document.getElementById("myMessageText");
+      if (charIndex < kataKataKamu.length) {
+        target.innerHTML += kataKataKamu.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 40);
+      }
+    }
+    window.onload = typeEffect;
+
+    // Respon slider saat digeser
+    function updateLoveMeter(val) {
+      document.getElementById('percentText').innerText = val + "%";
+      const note = document.getElementById('meterNote');
+      
+      if (val < 40) {
+        note.innerText = "Dikit amat, ngambek nih ya? 🥺";
+      } else if (val < 75) {
+        note.innerText = "Lumayan, tapi masa cuma segitu? 😜";
+      } else if (val < 100) {
+        note.innerText = "Banyak banget! Makasih banyak ya ayang! 🥰";
+      } else {
+        note.innerText = "Sayang banget tanpa batas! 💖✨";
+      }
+    }
+
+    // Mengirim persen, kalimat respon, dan pesan ke WhatsApp
+    function sendToWhatsApp() {
+      const percent = document.getElementById('loveRange').value;
+      const meterText = document.getElementById('meterNote').innerText;
+      const customMessage = document.getElementById('secretMessage').value.trim();
+
+      let text = `Hai! Aku baru buka web lucumu 🍓✨\n\n`;
+      text += `❤️ Kadar sayangku: *${percent}%*\n`;
+      text += `💬 Perasaanku: *${meterText}*\n\n`;
+      
+      if (customMessage !== "") {
+        text += `💌 Pesan buat kamu:\n"${customMessage}"`;
+      } else {
+        text += `💌 Pesan buat kamu: (aku sayang kamu selalu!)`;
+      }
+
+      const encodedText = encodeURIComponent(text);
+      const url = `https://wa.me/${nomorWhatsApp}?text=${encodedText}`;
+      
+      window.open(url, '_blank');
+    }
+
+    // Efek stiker pastel melayang di latar belakang
+    const cuteStickers = ['🌸', '✨', '🍓', '🧸', '💖', '☁️', '🎀'];
+    function createSticker() {
+      const sticker = document.createElement('div');
+      sticker.classList.add('floating-sticker');
+      sticker.innerText = cuteStickers[Math.floor(Math.random() * cuteStickers.length)];
+      sticker.style.left = Math.random() * 100 + 'vw';
+      sticker.style.fontSize = Math.floor(Math.random() * 16 + 16) + 'px';
+      sticker.style.animationDuration = Math.random() * 3 + 4 + 's';
+      
+      document.body.appendChild(sticker);
+      setTimeout(() => sticker.remove(), 7000);
+    }
+    setInterval(createSticker, 400);
+
+    // Efek letupan hati saat layar disentuh/diklik
+    window.addEventListener('click', (e) => {
+      const heart = document.createElement('div');
+      heart.classList.add('click-heart');
+      heart.innerText = '💖';
+      heart.style.left = `${e.clientX - 12}px`;
+      heart.style.top = `${e.clientY - 12}px`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 800);
+    });
+  </script>
+
+</body>
+</html>
